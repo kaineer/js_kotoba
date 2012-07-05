@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kanji: MyString
+  kana: MyString
+  meaning: MyString
+  jlpt: 1
+
+two:
+  kanji: MyString
+  kana: MyString
+  meaning: MyString
+  jlpt: 1
