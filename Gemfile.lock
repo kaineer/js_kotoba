@@ -121,7 +121,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   pry
-  rails (= 3.2.3)
+  rails (~> 3.2.3)
   rails-backbone
   sass-rails (~> 3.2.3)
   sextant
