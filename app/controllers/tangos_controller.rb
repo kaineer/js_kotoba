@@ -3,7 +3,7 @@ class TangosController < ApplicationController
 
   # GET /tangos(.:format)
   def index
-    render :json => Tango.limit(100).all
+    render :json => Tango.limit(params[:limit] || 100).all
   end
 
   # GET /tangos/:id(.:format)

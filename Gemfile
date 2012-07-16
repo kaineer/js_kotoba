@@ -21,7 +21,7 @@ gem 'rails-backbone'
 
 group :development do
   gem 'pry'
-  gem 'sextant'
+  gem 'api_taster'
 end
 
 # To use ActiveModel has_secure_password
