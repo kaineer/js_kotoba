@@ -1,4 +1,9 @@
 JsKotoba::Application.routes.draw do
+  devise_for :users, :controllers => {
+    :sessions => "admins/sessions",
+    :registrations => "admins/registrations"
+  }
+
   resources :tangos, :only => [:index, :show]
 
   # The priority is based upon order of creation:
