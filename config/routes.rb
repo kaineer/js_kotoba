@@ -76,5 +76,10 @@ if Rails.env.development?
     get '/tangos/:id', {
       :id => rand(50) + 1
     }
+
+    #
+    get '/users/sign_up', {
+      :format => "html"
+    }
   end
 end
