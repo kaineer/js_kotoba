@@ -81,5 +81,14 @@ if Rails.env.development?
     get '/users/sign_up', {
       :format => "html"
     }
+
+    #
+    post '/users', {
+      :user => {
+        :email => "foo@bar.baz",
+        :password => "123123",
+        :password_confirmation => "123123"
+      }
+    }
   end
 end

@@ -3,19 +3,27 @@ module Admins
   class RegistrationsController < Devise::RegistrationsController
     respond_to :html, :json
 
-    # TODO: y u do not run this action?
+    before_filter :find_or_build_user, :only => :new
 
     # GET /users/sign_up
-    def sign_up
-      binding.pry
-
-      @user ||= User.new
-      @user.email = "foo@bar.baz"
-
+    def new
       respond_with do |format|
         format.json { render :json => @user.sign_up_hash }
         format.html
       end
+    end
+
+    def create
+      super
+      redirect_to :action => :new
+    end
+
+
+
+  private
+    #
+    def find_or_build_user
+      @user = (params[:id] ? User.find(params[:id]) : User.new)
     end
   end
 end
