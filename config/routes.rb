@@ -78,9 +78,7 @@ if Rails.env.development?
     }
 
     #
-    get '/users/sign_up', {
-      :format => "html"
-    }
+    get '/users/sign_up', {}
 
     #
     post '/users', {

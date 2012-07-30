@@ -1,23 +1,30 @@
 # Admins::RegistrationController
 module Admins
   class RegistrationsController < Devise::RegistrationsController
-    respond_to :html, :json
+    respond_to :json
 
     before_filter :find_or_build_user, :only => :new
 
     # GET /users/sign_up
     def new
-      respond_with do |format|
-        format.json { render :json => @user.sign_up_hash }
-        format.html
-      end
+      render :json => @user.sign_up_hash
     end
 
     def create
-      super
-      redirect_to :action => :new
-    end
+      build_resource
 
+      if resource.save
+        if resource.active_for_authentication?
+          sign_in(resource_name, resource)
+          render :json => {:user => resource}
+        else
+          render :json => {:message => "Need to confirm email"}
+        end
+      else
+        clean_up_passwords(resource)
+        render :json => {:redirect_to => "users/sign_up", :errors => resource.errors}
+      end
+    end
 
 
   private
