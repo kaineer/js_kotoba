@@ -65,7 +65,7 @@ if Rails.env.development?
   ApiTaster.routes do
     #
     get '/tangos', {
-      :limit => ""
+      :limit => 100
     }
     #
     get '/tangos/:id', {
