@@ -1,4 +1,9 @@
 JsKotoba::Application.routes.draw do
+  devise_for :users, :controllers => {
+    :sessions => "admins/sessions",
+    :registrations => "admins/registrations"
+  }
+
   resources :tangos, :only => [:index, :show]
 
   # The priority is based upon order of creation:
@@ -70,6 +75,18 @@ if Rails.env.development?
     #
     get '/tangos/:id', {
       :id => rand(50) + 1
+    }
+
+    #
+    get '/users/sign_up', {}
+
+    #
+    post '/users', {
+      :user => {
+        :email => "foo@bar.baz",
+        :password => "123123",
+        :password_confirmation => "123123"
+      }
     }
   end
 end
