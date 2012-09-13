@@ -6,10 +6,10 @@ gem 'rails', '~> 3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'ancestry'
+gem 'ancestry'            # Handling tree data
 
-gem 'devise'
-gem 'cancan'
+gem 'devise'              # Authentication
+gem 'cancan'              # Authorization
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +24,7 @@ gem 'rails-backbone'
 
 group :development do
   gem 'pry'
+  gem 'pry-rails'
   gem 'api_taster'
 end
 
