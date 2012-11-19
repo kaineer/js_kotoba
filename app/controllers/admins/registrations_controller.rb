@@ -5,25 +5,11 @@ module Admins
 
     before_filter :find_or_build_user, :only => :new
 
-    # GET /users/sign_up
-    def new
-      render :json => @user.sign_up_hash
-    end
-
     def create
       build_resource
+      resource.update_jabber(params)
 
-      if resource.save
-        if resource.active_for_authentication?
-          sign_in(resource_name, resource)
-          render :json => {:user => resource}
-        else
-          render :json => {:message => "Need to confirm email"}
-        end
-      else
-        clean_up_passwords(resource)
-        render :json => {:redirect_to => "users/sign_up", :errors => resource.errors}
-      end
+      render :json => { :message => "Sent you a message" }
     end
 
 

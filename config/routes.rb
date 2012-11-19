@@ -4,6 +4,8 @@ JsKotoba::Application.routes.draw do
     :registrations => "admins/registrations"
   }
 
+  root :to => "home#index"
+
   resources :tangos, :only => [:index, :show]
 
   # The priority is based upon order of creation:

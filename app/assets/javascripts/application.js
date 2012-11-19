@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require handlebars
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
+//= require jst
 //= require backbone/js_kotoba
 //= require_tree .
