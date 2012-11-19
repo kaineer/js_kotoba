@@ -6,10 +6,10 @@ gem 'rails', '~> 3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'ancestry'
+gem 'ancestry'            # Handling tree data
 
-gem 'devise'
-gem 'cancan'
+gem 'devise'              # Authentication
+gem 'cancan'              # Authorization
 
 # gem 'jabber_delivery', '0.0.1'
 gem 'letter_opener'
